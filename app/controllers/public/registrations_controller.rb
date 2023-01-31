@@ -63,13 +63,13 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
    def after_sign_in_path_for(resource)
      if current_customer
-       flash[:notice] = "登録完了しました" 
+       flash[:notice] = "登録完了しました"
        public_customers_my_page_path
      end
    end
-   
+
     def after_sign_out_path_for(resource)
-    root_path
+    public_root_path
     end
 
    protected
